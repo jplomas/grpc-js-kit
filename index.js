@@ -1,4 +1,4 @@
-const grpc = require("grpc");
+const grpc = require("@grpc/grpc-js");
 const protoLoader = require("@grpc/proto-loader");
 
 function getProtoFromPackageDefinition(packageDefinition, packageName) {
@@ -33,9 +33,10 @@ class GrpcServer {
   }
   
   listen(address, creds=grpc.ServerCredentials.createInsecure()){
-    this.server.bind(address, creds);
-    this.server.start();
-    return this;
+    this.server.bindAsync(address, creds, () => {
+      this.server.start();
+      return this;
+    });
   }
 
   close(force=false, cb){

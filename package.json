@@ -1,33 +1,32 @@
 {
-  "name": "grpc-kit",
-  "version": "0.2.0",
-  "description": "use grpc more simply",
+  "name": "grpc-js-kit",
+  "version": "0.1.0",
+  "description": "use grpc-js more simply",
   "main": "index.js",
   "scripts": {
     "test": "$(npm bin)/mocha --require intelli-espower-loader test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YoshiyukiKato/grpc-kit.git"
+    "url": "git+https://github.com/jplomas/grpc-js-kit.git"
   },
   "keywords": [
     "grpc"
   ],
-  "author": "YoshiyukiKato",
+  "author": "jplomas",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/YoshiyukiKato/grpc-kit/issues"
+    "url": "https://github.com/jplomas/grpc-js-kit/issues"
   },
-  "homepage": "https://github.com/YoshiyukiKato/grpc-kit#readme",
-  "peerDependencies": {
-    "grpc": "^1.17.0",
+  "homepage": "https://github.com/jplomas/grpc-js-kit#readme",
+  "dependencies": {
+    "@grpc/grpc-js": "^0.8.1",
     "@grpc/proto-loader": "^0.3.0"
   },
-  "dependencies": {},
   "devDependencies": {
-    "@grpc/proto-loader": "^0.3.0",
-    "grpc": "^1.17.0",
     "intelli-espower-loader": "^1.0.1",
-    "mocha": "^5.2.0"
+    "minimist": ">=1.2.5",
+    "mocha": "^7.1.1",
+    "power-assert": "^1.6.1"
   }
 }

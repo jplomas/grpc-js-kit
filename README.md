@@ -1,12 +1,14 @@
-# grpc-kit
-[![npm version](https://badge.fury.io/js/grpc-kit.svg)](https://badge.fury.io/js/grpc-kit)
+# grpc-js-kit
+[![npm version](https://badge.fury.io/js/grpc-js-kit.svg)](https://badge.fury.io/js/grpc-js-kit)
 
-Use grpc more simply on Node.js.
+Use grpc-js more simply on Node.js.
+
+This is a fork of YoshiyukiKato/grpc-js-kit which uses the @grpc/grpc-js pure JS implementation of grpc.
 
 ## quick start
 ### install
 ```sh
-$ npm install grpc @grpc/proto-loader grpc-kit
+$ npm install @grpc/grpc-js @grpc/proto-loader grpc-js-kit
 ```
 
 ### proto
@@ -31,7 +33,7 @@ message ResponseGreet {
 
 ### Server
 ```js
-const {createServer} = require("grpc-kit");
+const {createServer} = require("grpc-js-kit");
 const server = createServer();
 
 server.use({
@@ -59,7 +61,7 @@ server.listen("0.0.0.0:50051");
 
 ### Client
 ```js
-const {createClient} = require("grpc-kit");
+const {createClient} = require("grpc-js-kit");
 const client = createClient({
   protoPath: "/path/to/greeter.proto",
   packageName: "greeter",
@@ -104,7 +106,7 @@ message Message {
 
 ### Server
 ```js
-const {createServer} = require("grpc-kit");
+const {createServer} = require("grpc-js-kit");
 const server = createServer();
 
 server.use({
@@ -153,7 +155,7 @@ server.listen("0.0.0.0:50051");
 
 ### Client
 ```js
-const {createClient} = require("grpc-kit");
+const {createClient} = require("grpc-js-kit");
 const client = createClient({
   protoPath: "/path/to/stream_greeter.proto",
   packageName: "stream_greeter",
